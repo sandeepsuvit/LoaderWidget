@@ -1,0 +1,27 @@
+/**
+ * CUSTOMIZED STANDBY LOADER WIDGET FOR DOJO
+ * 
+ * Created by SANDEEP KANANGATT
+ * Email - sandeepsuvit@gmail.com
+ * Website - www.dotedlabs.com
+ * 
+ * STYLESHEET FOR THE WIDGET
+ * -------------------------
+ * Include this css in the master page where the 
+ * widget is being initialized.
+ *
+ */
+ 
+ 
+/** Position the image **/
+.standbyAjaxLoaderImage{
+	float: left;
+}
+
+/** Position the text **/
+.standbyAjaxLoaderText{
+	float: left;
+	margin-top: 5px;
+	margin-left: 10px;
+	max-width: 500px;
+}
