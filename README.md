@@ -7,12 +7,12 @@ Created by SANDEEP KANANGATT<br/>
 Email - sandeepsuvit@gmail.com<br/>
 Website - www.dotedlabs.com<br/>
 
-This widget is a customized version of Dojo Standby widget (http://livedocs.dojotoolkit.org/dojox/widget/Standby). It has been customized to include texts long with the loading image. This helps the user to display text content dynamically when they want to show the loader for any particular event. The user can also change the loading image dynamically when they call the show() method of the widget. 
+This widget is a customized version of Dojo Standby widget (http://livedocs.dojotoolkit.org/dojox/widget/Standby). It has been customized to include texts long with the loading image. This helps the user to display text content dynamically when they want to show the loader for any particular event. The user can also change the loading image dynamically when they call the show() method of the widget. <br/>
 This standby loader can be invoked in the following ways.
 <b>Note:</b>
-The loader has been default set to work on the "wrapper" <div/> on the 
+The loader has been default set to work on the "wrapper" div on the 
 		html pages. For achieving this you can enclose all your html content in a 
-		<div/> with id as "wrapper". User can also change default "wrapper" attach 
+		div with id as "wrapper". User can also change default "wrapper" attach 
 		node by calling changeTargetObject() function and passing in the node details.
 
 <b>How to use this widget:</b><br/>
