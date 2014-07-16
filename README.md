@@ -1,5 +1,5 @@
-LoaderWidget
-============
+Loader Widget
+=============
 
 CUSTOMIZED STANDBY LOADER WIDGET FOR DOJO
 
