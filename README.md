@@ -7,7 +7,7 @@ Created by SANDEEP KANANGATT<br/>
 Email - sandeepsuvit@gmail.com<br/>
 Website - www.dotedlabs.com<br/>
 
-This widget is a customized version of Dojo Standby widget (http://livedocs.dojotoolkit.org/dojox/widget/Standby). It has been customized to include texts long with the loading image. This helps the user to display text content dynamically when they want to show the loader for any particular event. The user can also change the loading image dynamically when they call the <b>show()</b> method of the widget. <br/><br/>
+This widget is a customized version of Dojo Standby widget (http://livedocs.dojotoolkit.org/dojox/widget/Standby). It has been customized to include texts along with the loading image. This helps the user to display text content dynamically when they want to show the loader for any particular event. The user can also change the loading image dynamically when they call the <b>show()</b> method of the widget. <br/><br/>
 This standby loader can be invoked in the following ways.<br/><br/>
 <b>Note:</b><br/>
 The loader has been default set to work on the "wrapper" div on the 
@@ -16,7 +16,7 @@ The loader has been default set to work on the "wrapper" div on the
 		node by calling <b>changeTargetObject()</b> function and passing in the node details.
 
 <b>How to use this widget:</b><br/>
-Include this js file and css file in your parent html 'head' tag
+Include this js file and css file in your parent html 'head' tag after including the <b>dojo.js</b> file.
 <pre>
 1. standbyLoader.show();
 <br/>   Displays the loader with the default text "Please wait...".<br/>
