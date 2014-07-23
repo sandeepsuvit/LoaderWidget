@@ -35,8 +35,12 @@
  * 4. standbyLoader.show({image: "image url", type:"IMG", text:"my message"});
  * 		-> Displays the image and the text that is passed as parameter. 
  * 
- * 5. standbyLoader.hide();
+ * 5. standbyLoader.show({target:"id of your target DOM object"});
+ *		-> Displays the loader on the target DOM specified.
+ * 
+ * 6. standbyLoader.hide();
  * 		-> Hides the loader and	defaults the loader text to "Please wait...".
+ *
  */
 
 // Globally set variables
@@ -48,7 +52,7 @@ var standbyLoaderImageSrc = "../../js/dojox/widget/Standby/images/loading.gif";
 // The default message on the loader
 var standbyLoaderDefaultText = "Please wait...";
 
-// The default target object
+// The default target object, user can change this on the fly.
 var standbyLoaderDefaultTargetObject = "wrapper";
 
 // Speed up calls to hasOwnProperty
@@ -101,14 +105,22 @@ require([ "dojox/widget/Standby", "dojo/domReady!" ], function(Standby) {
 
 	// Adding customized functionality to the standby loader object
 	standbyLoader = {
+		// Image URL reference
 		imageUrl : standbyLoaderImageSrc,
+		// Loader text reference
 		loaderText : standbyLoaderDefaultText,
+		// Image type
 		image_MIME : "IMG",
+		// Target DOM object reference
+		targetObj : standbyLoaderDefaultTargetObject,
 
 		show : function(param) {
 			if (param === undefined) {
+				// Set all to its default values
 				this.revertToDefaultText();
 				this.revertToDefaultImage();
+				this.revertToDefaultTargetObject();
+				// Show the widget
 				standby.show();
 			} else {
 				if (!StringUtilsFunctions.isEmpty(param.type)
@@ -127,9 +139,17 @@ require([ "dojox/widget/Standby", "dojo/domReady!" ], function(Standby) {
 					} else {
 						this.revertToDefaultText();
 					}
-					// Show the loader
+					// Check for modified target object property
+					if (!StringUtilsFunctions.isEmpty(param.target)) {
+						this.targetObj = param.target;
+						this.changeTargetObject(this.targetObj);
+					}else{
+						this.revertToDefaultTargetObject();
+					}
+					// Show the widget
 					standby.show();
 				} else {
+					// Check for loader text
 					if (!StringUtilsFunctions.isEmpty(param.text)) {
 						this.revertToDefaultImage();
 						this.loaderText = param.text;
@@ -138,7 +158,14 @@ require([ "dojox/widget/Standby", "dojo/domReady!" ], function(Standby) {
 						this.revertToDefaultText();
 						this.revertToDefaultImage();
 					}
-					// Show the loader
+					// Check for modified target object property
+					if (!StringUtilsFunctions.isEmpty(param.target)) {
+						this.targetObj = param.target;
+						this.changeTargetObject(this.targetObj);
+					}else{
+						this.revertToDefaultTargetObject();
+					}
+					// Show the widget
 					standby.show();
 				}
 			}
@@ -146,9 +173,12 @@ require([ "dojox/widget/Standby", "dojo/domReady!" ], function(Standby) {
 
 		// Function to hide the standby loader
 		hide : function() {
+			// Hides the widget
 			standby.hide();
+			// Set all to its default values
 			this.revertToDefaultText();
 			this.revertToDefaultImage();
+			this.revertToDefaultTargetObject();
 		},
 
 		// Change the default message to custom message
@@ -198,16 +228,17 @@ require([ "dojox/widget/Standby", "dojo/domReady!" ], function(Standby) {
 
 		// Change the default target object of the standby loader
 		changeTargetObject : function(param) {
-			if (StringUtilsFunctions.isEmpty(param)) {
-				standby.set("target", standbyLoaderDefaultTargetObject);
-			} else {
+			if (!StringUtilsFunctions.isEmpty(param)) {
 				standby.set("target", param);
+			} else {
+				this.revertToDefaultTargetObject();
 			}
 		},
 
 		// Change the custom target object to default target object
 		revertToDefaultTargetObject : function() {
-			standby.set("target", standbyLoaderDefaultTargetObject);
+			this.targetObj = param.standbyLoaderDefaultTargetObject;
+			standby.set("target", this.targetObj);
 		}
 
 	};
