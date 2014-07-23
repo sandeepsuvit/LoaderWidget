@@ -27,7 +27,7 @@ Include this js file and css file in your parent html 'head' tag after including
 4. standbyLoader.show({image: "image url", type:"IMG", text:"my message"});
 <br/>   Displays the image and the text that is passed as parameter. <br/>
 5. standbyLoader.show({image: "image url", type:"IMG", text:"my message", target:"id of your target DOM object"});
-<br/>	 Displays the image and the text on the target object that is passed as parameter. <br/>
+<br/>	 Displays the image and the text on the target object that is passed as parameter. Ex, standbyLoader.show({image: "image.gif", type:"IMG", text:"Loading...", target:"mainContainer"})<br/>
 6. standbyLoader.show({target:"id of your target DOM object"});
 <br/>	Displays the loader on the target DOM specified. <br/>
 7. standbyLoader.hide();
