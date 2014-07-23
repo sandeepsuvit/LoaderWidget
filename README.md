@@ -26,6 +26,8 @@ Include this js file and css file in your parent html 'head' tag after including
 <br/>   Displays the image that is passed as parameter. The text will stay as default. <br/>
 4. standbyLoader.show({image: "image url", type:"IMG", text:"my message"});
 <br/>   Displays the image and the text that is passed as parameter. <br/>
-5. standbyLoader.hide();
+5. standbyLoader.show({target:"id of your target DOM object"});
+<br/>	Displays the loader on the target DOM specified. <br/>
+6. standbyLoader.hide();
 <br/>   Hides the loader and defaults the loader text to "Please wait...".<br/>
 </pre>
