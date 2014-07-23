@@ -38,7 +38,12 @@
  * 5. standbyLoader.show({target:"id of your target DOM object"});
  *		-> Displays the loader on the target DOM specified.
  * 
- * 6. standbyLoader.hide();
+ * 6. standbyLoader.show({image: "image url", type:"IMG", text:"my message", 
+ * 			target:"id of your target DOM object"});
+ *		-> Displays the loader on the target DOM specified, with the cusomized
+ * 		   text and image passed as parameters.
+ * 
+ * 7. standbyLoader.hide();
  * 		-> Hides the loader and	defaults the loader text to "Please wait...".
  *
  */
